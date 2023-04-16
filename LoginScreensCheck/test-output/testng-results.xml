@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-16T13:53:47 IST" name="Default suite" finished-at="2023-04-16T13:53:48 IST" duration-ms="1082">
+    <groups>
+    </groups>
+    <test started-at="2023-04-16T13:53:47 IST" name="Default test" finished-at="2023-04-16T13:53:48 IST" duration-ms="1082">
+      <class name="saucedemoTesting.LoginScreenTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:saucedemoTesting.LoginScreenTest@5e600dd5]" started-at="2023-04-16T13:53:44 IST" name="launchBrowser" finished-at="2023-04-16T13:53:47 IST" duration-ms="2669" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="loinScreenTest()[pri:0, instance:saucedemoTesting.LoginScreenTest@5e600dd5]" started-at="2023-04-16T13:53:47 IST" name="loinScreenTest" finished-at="2023-04-16T13:53:48 IST" duration-ms="1029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loinScreenTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:saucedemoTesting.LoginScreenTest@5e600dd5]" started-at="2023-04-16T13:53:48 IST" name="closeBrowser" finished-at="2023-04-16T13:53:48 IST" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- saucedemoTesting.LoginScreenTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
