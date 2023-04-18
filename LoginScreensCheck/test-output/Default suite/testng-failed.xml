@@ -5,8 +5,8 @@
     <classes>
       <class name="saucedemoTesting.LoginScreenTest">
         <methods>
-          <include name="loinScreenTest"/>
           <include name="closeBrowser"/>
+          <include name="loginScreenTest" invocation-numbers="1"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- saucedemoTesting.LoginScreenTest -->

@@ -2,10 +2,12 @@ package saucedemoTesting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginScreenTest 
@@ -13,7 +15,7 @@ public class LoginScreenTest
 	WebDriver driver;
 	String url = "https://www.saucedemo.com";
 	String afterLogin;
-	
+		
 	@BeforeSuite
 	public void launchBrowser()
 	{
@@ -28,19 +30,43 @@ public class LoginScreenTest
 		driver.close();
 	}
 	
+	@DataProvider(name = "TestData")
+	public Object[][] testData()
+	{
+		Object[][] testdata = 
+		{
+			{"standard_user","secret_sauce"},
+			{"locked_out_user","secret_sauce"},
+			{"problem_user", "secret_sauce"},
+			{"performance_glitch_user","secret_sauce",}
+		};
+		
+		return testdata;
+	}
 	
-	@Test
-	public void loinScreenTest()
+	
+	@Test(dataProvider = "TestData")
+	public void loginScreenTest(String user, String pass)
 	{
 		driver.get(url);
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+		driver.findElement(By.id("user-name")).sendKeys(user);
+		driver.findElement(By.id("password")).sendKeys(pass);
 		driver.findElement(By.id("login-button")).click();
+	
 		
-		afterLogin = driver.findElement(By.xpath("//*[@class='app_logo']")).getText();
+		try
+		{
+			WebElement afterLoginE  = driver.findElement(By.xpath("//*[@class='app_logo']"));	
+			afterLogin = afterLoginE.getText();
+		}
+		
+		catch(Exception e)
+		{
+			Assert.assertFalse(true);
+		}
+		
 		
 		Assert.assertEquals(afterLogin, "Swag Labs");
-
 
 	}	
 }
