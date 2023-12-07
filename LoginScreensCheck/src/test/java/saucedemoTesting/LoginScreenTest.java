@@ -34,6 +34,12 @@ public class LoginScreenTest {
 
 		return testdata;
 	}
+	
+	@Test
+	public void ReadExcelData()
+	{
+		public void readExcelData;
+	}
 
 	@Test(dataProvider = "TestData")
 	public void loginScreenTest(String user, String pass) {
